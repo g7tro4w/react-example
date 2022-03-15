@@ -1,0 +1,1 @@
+Макетыч https://www.figma.com/file/pHwP60qmTENr6lavAIuMW3/%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD
