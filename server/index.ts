@@ -20,7 +20,7 @@ const manifest = fs.readFileSync(
     'utf-8'
   )
   const assets = JSON.parse(manifest)
-  
+
   serverInstance.get('/', (req: Request, res: Response) => {
     const component = ReactDOMServer.renderToString(React.createElement(App))
     res.render('index', { assets, component })

@@ -1,7 +1,9 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
+
+import { Default as DefaultLayout } from "./layouts";
 
 const App: FC = () => {
-    return <span>Hello from root component</span>
+    return <DefaultLayout />
 }
 
 export default App

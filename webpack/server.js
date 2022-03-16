@@ -2,6 +2,7 @@ const path = require('path')
 
 const CopyPlugin = require('copy-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   name: 'server',
@@ -31,6 +32,12 @@ module.exports = {
           configFile: path.resolve(__dirname, '../tsconfig.server.json'),
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          'ignore-loader'
+        ]
+      },
     ],
   },
   plugins: [
@@ -41,5 +48,6 @@ module.exports = {
           to: path.resolve(__dirname, '../templates')
       }],
     }),
+    new MiniCssExtractPlugin()
   ],
 }

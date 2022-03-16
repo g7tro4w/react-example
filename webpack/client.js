@@ -1,7 +1,7 @@
 const path = require('path')
 
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   name: 'client',
@@ -28,6 +28,17 @@ module.exports = {
           configFile: path.resolve(__dirname, '../tsconfig.client.json'),
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|png|svg)$/,
+        use: 'file-loader'
+      }
     ],
   },
   watchOptions: {
@@ -36,6 +47,7 @@ module.exports = {
     ignored: /node_modules/,
   },
   plugins: [
-    new WebpackManifestPlugin()
+    new WebpackManifestPlugin(),
+    new MiniCssExtractPlugin()
   ],
 }
