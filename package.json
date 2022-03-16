@@ -26,7 +26,8 @@
   "scripts": {
     "clean": "rm -rf dist/",
     "build:server": "webpack --config webpack/server",
-    "build:client": "webpack --config webpack/client",
+    "build:client": "webpack  --watch --mode=development --config webpack/client",
+    "build": "npm run build:server && npm run build:client",
     "start:server": "node ./dist/server",
     "start": "npm run clean && npm run build:server && npm run build:client && npm run start:server",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -12,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
+    clean: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx'],

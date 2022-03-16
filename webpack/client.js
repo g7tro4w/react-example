@@ -13,6 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist/client'),
     filename: '[name].[contenthash].js',
     publicPath: '',
+    clean: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -29,8 +30,12 @@ module.exports = {
       },
     ],
   },
+  watchOptions: {
+    aggregateTimeout: 1000,
+    poll: 500,
+    ignored: /node_modules/,
+  },
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackManifestPlugin()
   ],
 }
