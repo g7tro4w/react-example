@@ -1,3 +1,5 @@
-header {
+.header {
+    padding: 24px 70px;
+
     background-color: #403C3B;
 }

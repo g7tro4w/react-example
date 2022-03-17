@@ -2,6 +2,7 @@ const path = require('path')
 
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   name: 'client',
@@ -13,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist/client'),
     filename: '[name].[contenthash].js',
     publicPath: '',
-    clean: true,
+    clean: true
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -48,6 +49,11 @@ module.exports = {
   },
   plugins: [
     new WebpackManifestPlugin(),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+          { from: path.resolve(__dirname, '../static') }
+      ]
+  })
   ],
 }
