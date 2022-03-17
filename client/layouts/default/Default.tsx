@@ -6,12 +6,12 @@ import {
     Main
 } from './components'
 
-export const Default: FC = ({children}) => {
+export const Default: FC = ({ children }) => {
     return <>
-        <Header/>
+        <Header />
         <Main>
-            { children }
+            {children}
         </Main>
-        <Footer/>
+        <Footer />
     </>
 }
