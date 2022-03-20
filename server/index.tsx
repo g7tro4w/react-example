@@ -30,6 +30,14 @@ const manifest = fs.readFileSync(
     );
     res.render('index', { assets, component })
   })
+  serverInstance.get('/about', (req: Request, res: Response) => {
+    const component = ReactDOMServer.renderToString(
+      <StaticRouter location={req.url}>
+        <App />
+      </StaticRouter>
+    );
+    res.render('index', { assets, component })
+  })
 
 serverInstance.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`)
