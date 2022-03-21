@@ -1,0 +1,6 @@
+export { Home } from './Home' 
+export { Basket } from './Basket' 
+export { Delivery } from './Delivery' 
+export { About } from './About' 
+export { Product } from './Product' 
+export { Promo } from './Promo' 

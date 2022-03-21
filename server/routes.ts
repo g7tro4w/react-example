@@ -1,6 +1,8 @@
 import { Request, Response } from 'express'
 import { Views } from './views/views'
 
+import paths from '../config/paths.json'
+
 import * as ViewsLibrary from './views'
 
 interface IRoute {
@@ -12,10 +14,22 @@ interface IRoute {
 // TODO вынести в отдельный файл
 export const rawRoutes: IRoute[] = [
     {
-        path: '/',
+        path: paths.home,
     },
     {
-        path: '/about',
+        path: paths.about,
+    },
+    {
+        path: paths.basket,
+    },
+    {
+        path: paths.delivery,
+    },
+    {
+        path: paths.promo,
+    },
+    {
+        path: paths.product,
     }
 ]
 

@@ -12,7 +12,6 @@ serverInstance.set('views', path.join(__dirname, '../templates'))
 
 serverInstance.use('/', express.static(path.join(__dirname, 'client')))
 
-
 routes.forEach(route => {
   serverInstance.get(route.path, (req: Request, res: Response) => {
     // TODO Вот тут запилить обход миидварей, которые могут быть асинхронными
