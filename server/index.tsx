@@ -1,11 +1,7 @@
 import express, { Request, Response } from 'express'
 import path from 'path';
-import fs from 'fs';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server'
-import { StaticRouter } from "react-router-dom/server";
 
-import App from '../client/App'
+import { routes } from './routes'
 
 const PORT = 4000;
 
@@ -16,29 +12,15 @@ serverInstance.set('views', path.join(__dirname, '../templates'))
 
 serverInstance.use('/', express.static(path.join(__dirname, 'client')))
 
-const manifest = fs.readFileSync(
-    path.join(__dirname, 'client/manifest.json'),
-    'utf-8'
-  )
-  const assets = JSON.parse(manifest)
 
-  serverInstance.get('/', (req: Request, res: Response) => {
-    const component = ReactDOMServer.renderToString(
-      <StaticRouter location={req.url}>
-        <App />
-      </StaticRouter>
-    );
-    res.render('index', { assets, component })
+routes.forEach(route => {
+  serverInstance.get(route.path, (req: Request, res: Response) => {
+    // TODO Вот тут запилить обход миидварей, которые могут быть асинхронными
+    route.controller?.(req, res)
+    route.renderView(req, res)
   })
-  serverInstance.get('/about', (req: Request, res: Response) => {
-    const component = ReactDOMServer.renderToString(
-      <StaticRouter location={req.url}>
-        <App />
-      </StaticRouter>
-    );
-    res.render('index', { assets, component })
-  })
+})
 
 serverInstance.listen(PORT, () => {
-    console.log(`Server started at port ${PORT}`)
+  console.log(`Server started at port ${PORT}`)
 })
