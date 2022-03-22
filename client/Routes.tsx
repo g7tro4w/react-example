@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 
 import paths from '../config/paths.json'
 
-import { Home, About, Basket, Delivery, Product, Promo } from './pages'
+import { Home, About, Basket, Delivery, Product, Promo, NotFound } from './pages'
 
 export const Routes: FC = () => {
     return useRoutes([
@@ -30,6 +30,10 @@ export const Routes: FC = () => {
         {
             path: paths.promo,
             element: <Promo/>,
+        },
+        {
+            path: '*',
+            element: <NotFound/>,
         },
     ])
 }
