@@ -1,12 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 import { Default as DefaultLayout } from "./layouts";
 import { NotFound } from "./pages";
 import './App.css'
 
-const App: FC = () => {
+export default () => {
     return <DefaultLayout>
         <NotFound/>
     </DefaultLayout>
 }
-
-export default App
