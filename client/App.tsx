@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Default as DefaultLayout } from "./layouts";
-import { routes } from './routes'
+import { Routes } from './Routes'
 import './App.css'
 
 const App: FC = () => {
     return <DefaultLayout>
-        {routes}
+        <Routes/>
     </DefaultLayout>
 }
 
