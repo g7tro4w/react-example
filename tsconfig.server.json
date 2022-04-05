@@ -12,6 +12,10 @@
       "allowJs": true,
       "strict": true,
       "strictNullChecks": true,
-      "noImplicitAny": true
+      "noImplicitAny": true,
+      "baseUrl": "./",
+      "paths": {
+        "components/*": ["client/components/*"]
+      }
     }
   }

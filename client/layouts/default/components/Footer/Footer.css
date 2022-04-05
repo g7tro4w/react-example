@@ -1,4 +1,6 @@
 .footer {
+    flex: 0 0;
+
     padding: 26px 40px;
 
     background: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);

@@ -17,6 +17,9 @@ module.exports = {
     clean: true
   },
   resolve: {
+    alias: {
+      components: path.resolve(__dirname, '../client/components'),
+    },
     extensions: ['.ts', '.tsx', '.js'],
   },
   target: 'web',

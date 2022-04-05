@@ -1,4 +1,6 @@
 .header {
+    flex: 0 0;
+
     padding: 24px 70px;
 
     background-color: #403C3B;

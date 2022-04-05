@@ -6,12 +6,14 @@ import {
     Main
 } from './components'
 
+import './Default.css'
+
 export const Default: FC = ({ children }) => {
-    return <>
+    return <div className='layout-default'>
         <Header />
         <Main>
             {children}
         </Main>
         <Footer />
-    </>
+    </div>
 }

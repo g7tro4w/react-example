@@ -1,6 +1,5 @@
 .main {
-    /*
-    TODO удоли O_O
-    */
-    min-height: 100vh;
+    flex: 1 0;
+
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
 }

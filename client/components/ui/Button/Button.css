@@ -1,0 +1,32 @@
+.ui-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    border-radius: 10px;
+
+    border: none;
+    outline: none;
+}
+
+.ui-button_default {
+    color: #FFFFFF;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+}
+.ui-button_danger {
+    color: #FFFFFF;
+    background: linear-gradient(114.93deg, #CC3441 5.11%, #80131C 94%);
+}
+.ui-button_warning {
+    color: #FFFFFF;
+    background: linear-gradient(114.93deg, #FFF019 5.11%, #CCBD00 94%);
+}
+.ui-button_minor {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #72A479;
+}
